@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/linear_layout"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/dashboard_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#2196F3"
+                android:padding="8dp"
+                android:text="CURATED FOR MAYANK"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:id="@+id/main_title"
+                android:textColor="#000"
+               android:padding="8dp"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
+               />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/BlogRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/seemore"
+    android:layout_gravity="center">
+                <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="see more"
+    android:textSize="18sp"
+    android:gravity="center"
+    android:layout_gravity="center"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_action_down"/>
+            </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:id="@+id/details_ll"
+        android:visibility="gone"
+        android:background="#123"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"  >
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/relativelayout_pager"
+
+                    android:layout_weight="3">
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/expand_pager"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentTop="true" />
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/expand_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@id/expand_pager"
+                        app:ci_drawable="@drawable/indicator_background"
+                        android:layout_alignParentBottom="true"
+                        />
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/expand_recycler_view"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_below="@id/relativelayout_pager">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
